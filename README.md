@@ -1,88 +1,44 @@
 <p align="center">
   <img src="logo.png" alt="AINCRAFT" width="640">
 </p>
-<p align="center"><strong>An Aincrad-inspired fantasy RPG experience, built in Minecraft.</strong></p>
-<p align="center">Minecraft Java 1.21.4 · Fabric · Custom Windows launcher · In development</p>
 
-![Aincrad Minecraft scene used in the AINCRAFT launcher](aincrad.png)
+AINCRAFT is a Minecraft Java project I'm working on, inspired by Sword Art Online and Aincrad. I'm building the game and a Windows launcher for it. Both are still in development.
 
-## Enter AINCRAFT
+![Aincrad Minecraft screenshot used in the launcher](aincrad.png)
 
-AINCRAFT is an independent fantasy RPG project built on Minecraft Java Edition. Inspired by Aincrad and Sword Art Online, the project brings a modded Minecraft world and a dedicated launcher together into one experience. Its aim is to make joining the project straightforward: prepare the right game files, connect a Minecraft account, and enter the multiplayer world.
+## The launcher
 
-The project is actively being developed. The imagery above shows the Minecraft setting used by the launcher; it does not represent a finished or publicly released game.
+I want players to be able to open the launcher, install the right files, sign in with their Minecraft account, and join AINCRAFT.
 
-## One launcher, one game setup
+The current build uses Minecraft Java 1.21.4, Fabric 0.20.0, and Java 21 on Windows x64. It keeps AINCRAFT in its own game folder and prepares the Java runtime during installation. Play only appears when the required files are present and complete. There is also a file check and repair option for broken or interrupted downloads.
 
-The custom launcher gives AINCRAFT its own installation and settings, separate from a player's existing Minecraft profiles.
+The interface uses the AINCRAFT logo, a Minecraft screenshot of Aincrad, and pixel fonts. The screenshot above is the one currently used in the launcher.
 
-- **Install before playing.** Required game files must be present and complete before Play becomes available.
-- **Verify and repair.** Bundled content is checked against its manifest; partial downloads can be retried.
-- **Use a Minecraft account.** Microsoft sign-in is handled on Microsoft's own website, with a Java profile required before launch.
-- **Join directly.** The launcher prepares the Fabric client and passes the AINCRAFT multiplayer connection to Minecraft.
-- **Keep player settings.** Installation and updates preserve player settings and game data.
-- **Keep the interface simple.** The launcher uses the full AINCRAFT branding, Minecraft pixel typography, and a static Aincrad screenshot.
+## Minecraft account sign-in
 
-| Development platform | Current target |
-| --- | --- |
-| Game | Minecraft Java Edition 1.21.4 |
-| Mod loader | Fabric 0.20.0 |
-| Java runtime | Java 21, prepared by the launcher |
-| Desktop app | Windows x64, Electron |
-| Account integration | Microsoft MSAL device-code flow, Xbox and Minecraft Services |
-| Distribution | Local development builds; no public release |
+AINCRAFT has its own Microsoft application registration. Players won't need to set up an Azure app or enter a client ID themselves.
 
-## Microsoft and Minecraft application review
+Sign-in uses MSAL's device-code flow. The player opens Microsoft's website, enters the code shown in the launcher, and signs in there. Their Microsoft password is never entered into AINCRAFT.
 
-AINCRAFT uses its **own** Microsoft application registration. Players will not need to register an Azure application or supply their own client ID.
+The launcher requests `XboxLive.signin`, completes the Xbox Live and XSTS exchange, and calls Minecraft Services for a session and Java profile. If it doesn't receive a valid Java profile, it won't launch the game. Minecraft Services access is needed for those authentication and profile requests.
 
-**Application name:** AINCRAFT  
-**Public application/client ID:** `9cdecb3f-dda2-46ab-81ce-8104ed0762c8`  
-**Account audience:** Personal Microsoft accounts  
-**Client type:** Public desktop client; no client secret
+Tokens are handled in the Electron main process. The interface only receives the player's public profile. The local MSAL cache is encrypted using Windows account storage, and Disconnect deletes that local cache. The launcher doesn't request access to mail, contacts, calendars, or cloud files.
 
-Minecraft Services API access is needed to exchange the player's authorized Xbox identity for a Minecraft session and retrieve their Java profile. This supports account validation and launching the player's owned game. The launcher does not offer offline-account bypasses or reuse another launcher's application ID.
+For Microsoft's review:
 
-### How sign-in works
+- Application name: **AINCRAFT**
+- Public client ID: `9cdecb3f-dda2-46ab-81ce-8104ed0762c8`
+- Account type: personal Microsoft accounts
+- Authentication: public desktop client, device-code flow, no client secret
 
-1. The player chooses **Sign in** in the launcher.
-2. MSAL requests a device code using AINCRAFT's application ID and the `XboxLive.signin` scope.
-3. The player opens Microsoft's sign-in page, enters the code, and reviews Microsoft's consent screen.
-4. The launcher completes the Xbox Live and XSTS exchange, then requests a Minecraft Services session and Java profile.
-5. Only a valid Java profile enables an authenticated launch. The Minecraft session stays in the desktop main process until it is supplied to the game.
+The app registration is set up and Microsoft's device-code endpoint has been tested. Minecraft Services approval and a full sign-in and gameplay test are still needed. I haven't marked those as working yet.
 
-`Microsoft sign-in → Xbox Live → XSTS → Minecraft Services → Java profile → AINCRAFT launch`
+## What's public here
 
-| Service | Purpose |
-| --- | --- |
-| Microsoft identity platform | Player authentication and device-code consent |
-| Xbox Live / XSTS | Authorize the Xbox identity for Minecraft Services |
-| Minecraft Services | Obtain a Minecraft session and retrieve the Java profile |
-| AINCRAFT multiplayer server | Receive the normal Minecraft connection after launch |
+This repo contains the project description, logo, and Minecraft screenshot. The source code, game files, and launcher builds are still private. There are no public releases or downloads yet.
 
-### Account data and privacy
-
-Microsoft passwords and verification codes are entered only on Microsoft's website. AINCRAFT does not collect them in its own UI. The launcher does not request mailbox, calendar, contact, or cloud-file access.
-
-Authentication runs in the Electron main process; the renderer receives the player's public profile rather than tokens. The local MSAL session cache is encrypted through Electron safeStorage using the current Windows account. Disconnect removes that local cache; provider-side consent can be managed separately through Microsoft.
-
-For portable builds, settings and the encrypted cache live in the launcher's local data directory. They are not included in this repository or in the public documentation.
-
-## Development and release status
-
-| Area | Status |
-| --- | --- |
-| Launcher installation, file checks, settings and interface | Implemented and tested locally |
-| AINCRAFT Microsoft app registration | Created; personal accounts and public-client flow enabled |
-| Microsoft device-code issuance | Verified against the live Microsoft endpoint |
-| Minecraft Services application review | Not yet completed |
-| Owning-account sign-in and authenticated gameplay | End-to-end verification still required |
-| Public downloads and source distribution | Not published |
-
-This repository is the **public project overview and application-review reference**. It contains this README and the two branding images used above. Launcher source code, game files, executables, authentication data, and releases remain private. There is no announced public release date.
-
-Project questions can be raised through [GitHub Issues](https://github.com/Lorrxx/AINCRAFT/issues).
+Questions about the project can go in [Issues](https://github.com/Lorrxx/AINCRAFT/issues).
 
 ---
 
-AINCRAFT is an independent fan project. It is not an official Minecraft or Sword Art Online product and is not approved by or associated with Mojang, Microsoft, or the Sword Art Online rights holders. Minecraft and other referenced names belong to their respective owners.
+AINCRAFT is an independent fan project, not an official Minecraft or Sword Art Online product. It is not affiliated with Mojang, Microsoft, or the Sword Art Online rights holders.
