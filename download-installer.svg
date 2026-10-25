@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="48" viewBox="0 0 256 48" role="img" aria-labelledby="title">
+  <title id="title">Download the AINCRAFT installer for Windows</title>
+  <rect x="0.5" y="0.5" width="255" height="47" rx="5" fill="#bce9ff" stroke="#89c9e8"/>
+  <g fill="none" stroke="#102233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M29 14v14m-5-5 5 5 5-5M21 30v4h16v-4"/>
+  </g>
+  <text x="51" y="29.5" fill="#102233" font-family="system-ui, sans-serif" font-size="16" font-weight="600">Download installer</text>
+</svg>

@@ -3,35 +3,32 @@
 </p>
 
 <p align="center">
-  <img src="aincrad-launcher.gif" alt="Aincrad rotating among clouds and orbiting lights in the AINCRAFT launcher cinematic" width="640">
+  <img src="aincrad-launcher.gif" alt="Aincrad floating among clouds and orbiting lights" width="640">
 </p>
 
-## The project
+<p align="center">
+  <a href="https://github.com/Lorrxx/AINCRAFT/releases/download/v0.3.15/AINCRAFT-Setup-0.3.15.exe">
+    <img src="download-installer.svg" alt="Download the AINCRAFT installer for Windows" width="256" height="48">
+  </a>
+</p>
+<p align="center">
+  Windows · <a href="https://github.com/Lorrxx/AINCRAFT/releases/tag/v0.3.15">Release notes</a>
+</p>
 
-AINCRAFT is a Minecraft Java RPG project I'm working on, inspired by Sword Art Online and Aincrad. It includes the game world, server plugins and resource packs, and a custom Windows launcher. The project is still in development.
+## Welcome to AINCRAFT
 
-I'm building AINCRAFT around an Aincrad-inspired setting in Minecraft. The world and game content are being worked on alongside the launcher, which handles the files needed to run the project.
+AINCRAFT is an independent Minecraft RPG project inspired by Sword Art Online and the world of Aincrad. Its vision brings together floating floors, quiet towns and adventures beyond the gates, all within Minecraft.
 
-The animation above is the full 48-second Aincrad cinematic loop from the launcher, optimized for GitHub. [View the still image](aincrad-launcher.png). I'll add more of the project here as development progresses.
+The project is still in development. The launcher is available now, with more of the world to come.
 
-## The launcher
+## Getting started
 
-[Download the Windows installer — v0.3.15](https://github.com/Lorrxx/AINCRAFT/releases/download/v0.3.15/AINCRAFT-Setup-0.3.15.exe) · [Release notes and checksum](https://github.com/Lorrxx/AINCRAFT/releases/tag/v0.3.15)
+Download the Windows installer above, install the launcher and follow the setup steps. The launcher takes care of preparing the game files.
 
-Development pre-release for Windows x64.
+## Join the community
 
-The launcher is a Windows desktop app built specifically for AINCRAFT. It installs the game files, checks for missing or incomplete downloads, and prepares the Java runtime. The game needs to be fully installed before Play becomes available.
-
-The current development build uses vanilla Minecraft Java 1.21.4 and Java 21 on Windows x64, with server-provided resource packs and no required client mods. AINCRAFT has its own game folder, with a file verification and repair option. Player settings and saves are kept when verifying the installation.
-
-The interface uses the full AINCRAFT logo, Barlow typography, and a 48-second Aincrad cinematic loop with a still-image fallback.
-
-## Development
-
-I'm testing the launcher locally while continuing work on the game. This repository contains the project overview, branding images, and public launcher installer releases. Source code and game files remain private. AINCRAFT is still in development, with no full game release date announced.
-
-Questions about the project can go in [Issues](https://github.com/Lorrxx/AINCRAFT/issues).
+[Join Discord](https://discord.gg/KXcuErk7VK) to follow development, share ideas and meet other players. Found a problem with the launcher? [Report it here](https://github.com/Lorrxx/AINCRAFT/issues).
 
 ---
 
-AINCRAFT is an independent fan project, not an official Minecraft or Sword Art Online product. It is not affiliated with Mojang, Microsoft, or the Sword Art Online rights holders.
+AINCRAFT is an independent fan project, not affiliated with Mojang, Microsoft or the Sword Art Online rights holders.
