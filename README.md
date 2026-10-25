@@ -4,13 +4,13 @@
 
 AINCRAFT is a Minecraft Java RPG project I'm working on, inspired by Sword Art Online and Aincrad. It includes the game world, server plugins and resource packs, and a custom Windows launcher. The project is still in development.
 
-![Aincrad cinematic still from the AINCRAFT launcher](aincrad-launcher.png)
+![Aincrad rotating among clouds and orbiting lights in the AINCRAFT launcher cinematic](aincrad-launcher.gif)
 
 ## The project
 
 I'm building AINCRAFT around an Aincrad-inspired setting in Minecraft. The world and game content are being worked on alongside the launcher, which handles the files needed to run the project.
 
-The image above is the still from the launcher's Aincrad cinematic background. I'll add more of the project here as development progresses.
+The animation above is the full 48-second Aincrad cinematic loop from the launcher, optimized for GitHub. [View the still image](aincrad-launcher.png). I'll add more of the project here as development progresses.
 
 ## The launcher
 
