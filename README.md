@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="logo.png" alt="AINCRAFT" width="640">
+  <img src="aincraft-logo.png" alt="AINCRAFT" width="640">
 </p>
 
 AINCRAFT is a Minecraft Java RPG project I'm working on, inspired by Sword Art Online and Aincrad. It includes the game world, server plugins and resource packs, and a custom Windows launcher. The project is still in development.
 
-![Aincrad cinematic still from the AINCRAFT launcher](aincrad.png)
+![Aincrad cinematic still from the AINCRAFT launcher](aincrad-launcher.png)
 
 ## The project
 
