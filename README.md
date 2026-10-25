@@ -16,6 +16,10 @@ The animation above is the full 48-second Aincrad cinematic loop from the launch
 
 ## The launcher
 
+[Download the Windows installer — v0.3.15](https://github.com/Lorrxx/AINCRAFT/releases/download/v0.3.15/AINCRAFT-Setup-0.3.15.exe) · [Release notes and checksum](https://github.com/Lorrxx/AINCRAFT/releases/tag/v0.3.15)
+
+Development pre-release for Windows x64.
+
 The launcher is a Windows desktop app built specifically for AINCRAFT. It installs the game files, checks for missing or incomplete downloads, and prepares the Java runtime. The game needs to be fully installed before Play becomes available.
 
 The current development build uses vanilla Minecraft Java 1.21.4 and Java 21 on Windows x64, with server-provided resource packs and no required client mods. AINCRAFT has its own game folder, with a file verification and repair option. Player settings and saves are kept when verifying the installation.
@@ -24,7 +28,7 @@ The interface uses the full AINCRAFT logo, Barlow typography, and a 48-second Ai
 
 ## Development
 
-I'm testing the launcher locally while continuing work on the game. This repository currently contains the project overview and branding images. Source code, game files, and launcher builds are still private, and there are no public downloads or release dates yet.
+I'm testing the launcher locally while continuing work on the game. This repository contains the project overview, branding images, and public launcher installer releases. Source code and game files remain private. AINCRAFT is still in development, with no full game release date announced.
 
 Questions about the project can go in [Issues](https://github.com/Lorrxx/AINCRAFT/issues).
 
